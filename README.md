@@ -6,13 +6,14 @@
 - **package.json:** Es un archivo **package.json** que contiene la información del proyecto, incluyendo su nombre, versión, dependencias, scripts, configuración de eslint y la lista de navegadores compatibles. En este archivo se especifican las dependencias que serán instaladas a través del comando **"npm install"** en el primer código, y se definen los comandos que pueden ser ejecutados a través del comando **"npm run <nombre del script>".** En este caso, se definen los scripts start, build, test y eject que son comandos comunes en proyectos React. También se especifica la configuración de eslint que se utiliza para analizar y corregir problemas de estilo en el código, y la lista de navegadores compatibles con el proyecto.
   
 - **.gitignore:** Este es un archivo .gitignore que especifica los archivos y directorios que deben ser ignorados por Git. Esto significa que Git no rastreará ni incluirá estos archivos y directorios en el repositorio. En este caso, se ignoran los siguientes:
-**/node_modules:** Directorio donde se instalan las dependencias de Node.js.
-**/.pnp y .pnp.js:** Archivos relacionados con Plug'n'Play (PnP) de Yarn.
-**/coverage:** Directorio donde se almacenan los resultados de cobertura de pruebas.
-**/build:** Directorio donde se almacenan los archivos generados para la producción.
-**.DS_Store:** Archivo creado por el Finder de macOS que almacena información sobre la carpeta.
-**.env.local, .env.development.local, .env.test.local y .env.production.local:** Archivos de configuración de entorno local que deben ser ignorados.
-**npm-debug.log*, yarn-debug.log* y yarn-error.log*:** Archivos de registro de depuración que pueden ser generados por los gestores de paquetes NPM y Yarn.
+  
+1. **/node_modules:** Directorio donde se instalan las dependencias de Node.js.
+2. **/.pnp y .pnp.js:** Archivos relacionados con Plug'n'Play (PnP) de Yarn.
+3. **/coverage:** Directorio donde se almacenan los resultados de cobertura de pruebas.
+4. **/build:** Directorio donde se almacenan los archivos generados para la producción.
+5. **.DS_Store:** Archivo creado por el Finder de macOS que almacena información sobre la carpeta.
+6. **.env.local, .env.development.local, .env.test.local y .env.production.local:** Archivos de configuración de entorno local que deben ser ignorados.
+7. **npm-debug.log*, yarn-debug.log* y yarn-error.log*:** Archivos de registro de depuración que pueden ser generados por los gestores de paquetes NPM y Yarn.
 ---
 
 ### **client\public**
