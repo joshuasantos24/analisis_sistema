@@ -4,7 +4,7 @@
 - **Dockerfile.dev:** Es un archivo Dockerfile que construye una imagen de contenedor de Docker utilizando la imagen base de **node:16-alpine.** Este archivo define el directorio de trabajo, copia el archivo **package.json** al directorio de trabajo, ejecuta el comando **npm install** para instalar las dependencias del proyecto, copia todo el contenido de la aplicación al directorio de trabajo y finalmente ejecuta el comando **"npm run start"** para iniciar la aplicación.
 
 
-- **package.json:** Es un archivo **package.json** que contiene la información del proyecto, incluyendo su nombre, versión, dependencias, scripts, configuración de eslint y la lista de navegadores compatibles. En este archivo se especifican las dependencias que serán instaladas a través del comando **"npm install"** en el primer código, y se definen los comandos que pueden ser ejecutados a través del comando **"npm run <nombre del script>".** En este caso, se definen los scripts start, build, test y eject que son comandos comunes en proyectos React. También se especifica la configuración de eslint que se utiliza para analizar y corregir problemas de estilo en el código, y la lista de navegadores compatibles con el proyecto.
+- **package.json:** Es un archivo **package.json** que contiene la información del proyecto, incluyendo su nombre, versión, dependencias, scripts, configuración de eslint y la lista de navegadores compatibles. En este archivo se especifican las dependencias que serán instaladas a través del comando **"npm install"** en el primer código, y se definen los comandos que pueden ser ejecutados a través del comando **"npm run nombre del script".** En este caso, se definen los scripts start, build, test y eject que son comandos comunes en proyectos React. También se especifica la configuración de eslint que se utiliza para analizar y corregir problemas de estilo en el código, y la lista de navegadores compatibles con el proyecto.
   
   
 - **.gitignore:** Este es un archivo .gitignore que especifica los archivos y directorios que deben ser ignorados por Git. Esto significa que Git no rastreará ni incluirá estos archivos y directorios en el repositorio. En este caso, se ignoran los siguientes:
@@ -41,7 +41,7 @@ La última regla **"@keyframes App-logo-spin"** establece los fotogramas clave p
 El componente App define el esqueleto de la aplicación, que consiste en un encabezado que contiene un logotipo, un enlace *"Learn React"* y dos enlaces de navegación, *"Home"* y *"Other Page".*
 
 El componente **Router** de React Router envuelve todo el contenido de la aplicación y establece las rutas para los componentes que se mostrarán en cada enlace.
-El contenido principal de la aplicación se define dentro de la etiqueta <div> con la clase App. Los componentes de React que se muestran en cada ruta se definen mediante la etiqueta **<Route>.**
+El contenido principal de la aplicación se define dentro de la etiqueta div con la clase App. Los componentes de React que se muestran en cada ruta se definen mediante la etiqueta **Route.**
 
 En este ejemplo, hay dos rutas definidas: la ruta principal "/" se asigna al componente Fib, mientras que la ruta *"/otherpage"* se asigna al componente **OtherPage.**
 Cada vez que el usuario hace clic en uno de los enlaces de navegación, React Router cambia la URL y carga el componente correspondiente.
@@ -71,7 +71,7 @@ En resumen, este componente React se utiliza para mostrar los valores calculados
 - **index.css:** Este código define estilos para la página web en general y para el código fuente. En particular, el estilo para el body establece un margen de 0 y define una serie de fuentes de texto para que se usen en la página web, siendo la primera de ellas -apple-system, que es la fuente de sistema predeterminada en dispositivos Apple. Los estilos adicionales para code establecen una fuente específica para el código fuente que se puede usar en la página. También hay algunas propiedades específicas de la fuente que mejoran su legibilidad en diferentes sistemas operativos.
 
 - **index.js:** El siguiente código es el punto de entrada del proyecto de React. Este archivo principal **index.js** importa los módulos de React y ReactDOM, el componente App, el archivo CSS **index.css** y una función reportWebVitals para medir el rendimiento de la aplicación.
-Luego, se llama a la función **ReactDOM.render()** para renderizar el componente App en el elemento HTML con el ID *"root"* del archivo **index.html.** Esto significa que todo el contenido de la aplicación de React se renderizará dentro de la etiqueta **<div id="root"></div>** en el archivo HTML.
+Luego, se llama a la función **ReactDOM.render()** para renderizar el componente App en el elemento HTML con el ID *"root"* del archivo **index.html.** Esto significa que todo el contenido de la aplicación de React se renderizará dentro de la etiqueta **div id="root"/div** en el archivo HTML.
 
 Finalmente, se llama a la función **reportWebVitals()** para medir el rendimiento de la aplicación. Esta función puede ser reemplazada con otra función que envíe los resultados de rendimiento a un servidor de análisis para un seguimiento más detallado del rendimiento de la aplicación.
   
