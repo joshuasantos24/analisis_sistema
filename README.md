@@ -10,6 +10,10 @@
 - **index.html:** Es un archivo HTML que se utiliza como plantilla para la aplicación React. Este archivo define la estructura básica de la página HTML, incluyendo metadatos como la descripción de la página, el título y los iconos de la aplicación. También incluye una etiqueta de script que define el elemento de la página HTML donde se va a renderizar la aplicación React, así como un mensaje de "noscript" que se muestra si JavaScript está deshabilitado en el navegador del usuario.
 
 - **manifest.json:** Es un archivo **manifest.json,** que es utilizado para proporcionar metadatos que se usan cuando se instala una aplicación web en un dispositivo móvil o de escritorio. En este caso, el archivo define el nombre corto y largo de la aplicación, los iconos que se usan para representar la aplicación, la URL de inicio, el modo de presentación, el color del tema y el color de fondo. Estos metadatos se usan para proporcionar una experiencia más nativa y de alta calidad para los usuarios que instalan la aplicación en sus dispositivos.
+
+-**robots.txt:** El archivo **robots.txt** es un archivo de texto plano que se utiliza para informar a los motores de búsqueda y otros robots de rastreo web acerca de las páginas del sitio que pueden o no pueden ser rastreadas. El protocolo **"robots.txt"** es una especie de acuerdo entre los sitios web y los motores de búsqueda para definir las reglas de acceso a los contenidos del sitio.
+
+En la página web [**https://www.robotstxt.org/robotstxt.html**](https://www.robotstxt.org/robotstxt.html) se pueden encontrar toda la información relacionada con este protocolo, incluyendo una descripción detallada del formato y la sintaxis del archivo robots.txt, las reglas y directivas que se pueden utilizar, ejemplos prácticos, recomendaciones, entre otros recursos. Además, también se pueden encontrar otras herramientas y utilidades relacionadas con el protocolo **"robots.txt".**
 ---
 
 ### **client\src**
