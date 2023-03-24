@@ -6,7 +6,6 @@
 - **package.json:** Es un archivo **package.json** que contiene la información del proyecto, incluyendo su nombre, versión, dependencias, scripts, configuración de eslint y la lista de navegadores compatibles. En este archivo se especifican las dependencias que serán instaladas a través del comando **"npm install"** en el primer código, y se definen los comandos que pueden ser ejecutados a través del comando **"npm run <nombre del script>".** En este caso, se definen los scripts start, build, test y eject que son comandos comunes en proyectos React. También se especifica la configuración de eslint que se utiliza para analizar y corregir problemas de estilo en el código, y la lista de navegadores compatibles con el proyecto.
   
 - **.gitignore:** Este es un archivo .gitignore que especifica los archivos y directorios que deben ser ignorados por Git. Esto significa que Git no rastreará ni incluirá estos archivos y directorios en el repositorio. En este caso, se ignoran los siguientes:
-
 **/node_modules:** Directorio donde se instalan las dependencias de Node.js.
 **/.pnp y .pnp.js:** Archivos relacionados con Plug'n'Play (PnP) de Yarn.
 **/coverage:** Directorio donde se almacenan los resultados de cobertura de pruebas.
