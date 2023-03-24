@@ -13,7 +13,7 @@
 
 -**robots.txt:** El archivo **robots.txt** es un archivo de texto plano que se utiliza para informar a los motores de búsqueda y otros robots de rastreo web acerca de las páginas del sitio que pueden o no pueden ser rastreadas. El protocolo **"robots.txt"** es una especie de acuerdo entre los sitios web y los motores de búsqueda para definir las reglas de acceso a los contenidos del sitio.
 
-En la página web [**https://www.robotstxt.org/robotstxt.html**](https://www.robotstxt.org/robotstxt.html) se pueden encontrar toda la información relacionada con este protocolo, incluyendo una descripción detallada del formato y la sintaxis del archivo robots.txt, las reglas y directivas que se pueden utilizar, ejemplos prácticos, recomendaciones, entre otros recursos. Además, también se pueden encontrar otras herramientas y utilidades relacionadas con el protocolo **"robots.txt".**
+En la página web [https://www.robotstxt.org/robotstxt.html](https://www.robotstxt.org/robotstxt.html) se pueden encontrar toda la información relacionada con este protocolo, incluyendo una descripción detallada del formato y la sintaxis del archivo robots.txt, las reglas y directivas que se pueden utilizar, ejemplos prácticos, recomendaciones, entre otros recursos. Además, también se pueden encontrar otras herramientas y utilidades relacionadas con el protocolo **"robots.txt".**
 ---
 
 ### **client\src**
