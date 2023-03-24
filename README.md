@@ -13,7 +13,7 @@
 4. **/build:** Directorio donde se almacenan los archivos generados para la producción.
 5. **.DS_Store:** Archivo creado por el Finder de macOS que almacena información sobre la carpeta.
 6. **.env.local, .env.development.local, .env.test.local y .env.production.local:** Archivos de configuración de entorno local que deben ser ignorados.
-7. **npm-debug.log*, yarn-debug.log* y yarn-error.log*:** Archivos de registro de depuración que pueden ser generados por los gestores de paquetes NPM y Yarn.
+7. __npm-debug.log*, yarn-debug.log* y yarn-error.log*:__ Archivos de registro de depuración que pueden ser generados por los gestores de paquetes NPM y Yarn.
 ---
 
 ### **client\public**
