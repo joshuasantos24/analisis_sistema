@@ -12,6 +12,7 @@ En este archivo, se definen cinco servicios: **postgres,** **redis,** **nginx,**
 - El servicio worker es el trabajador y se basa en la imagen que se construye a partir de un Dockerfile.dev en la carpeta de worker. También utiliza un volumen para montar el directorio del trabajador en el contenedor y se definen las credenciales de Redis.
 
 Cada uno de estos servicios puede ser construido y ejecutado mediante el comando **docker-compose up.** 
+
 ---
 
 ## **client**
