@@ -94,3 +94,21 @@ En resumen, este código es parte de una herramienta para medir el rendimiento w
 ---
 
 ### **nginx**
+- **default.conf:** El código proporcionado es una configuración de servidor Nginx que se utiliza comúnmente para servir aplicaciones web en producción.
+
+La sección **upstream** define dos servidores backend llamados **client** y **api** que escuchan en los puertos 3000 y 5000, respectivamente. Luego, se define un servidor principal que escucha en el puerto 80.
+
+La sección **location** se utiliza para enrutar las solicitudes HTTP entrantes. La primera ubicación **/** redirige todas las solicitudes a la aplicación web en el servidor backend **client.** La ubicación **/ws** se utiliza para enrutar todas las solicitudes WebSocket a la misma aplicación web en el servidor backend **client.**
+
+La ubicación **/api** se utiliza para enrutar todas las solicitudes API a la aplicación backend en el servidor **api.** La línea **rewrite /api/(.*) /$1 break;** elimina la cadena "/api" del URI de la solicitud entrante antes de enrutar la solicitud al servidor backend **api.**
+
+En resumen, este archivo de configuración de Nginx se utiliza para enrutar las solicitudes HTTP y WebSocket entrantes a las aplicaciones web y API backend en servidores separados.
+
+
+- **Dockerfile.dev:** El siguiente código es un archivo Dockerfile que especifica una imagen de Docker que utiliza el servidor web NGINX y configura el archivo de configuración predeterminado de NGINX con el archivo "default.conf" en el directorio actual.
+
+La primera línea especifica la imagen base que se utilizará para construir la nueva imagen. En este caso, la imagen de Docker que contiene NGINX se utilizará como la imagen base.
+La segunda línea copia el archivo de configuración "default.conf" del directorio actual al directorio "/etc/nginx/conf.d/" en la imagen de Docker.
+
+
+
