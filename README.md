@@ -93,3 +93,4 @@ En resumen, este código es parte de una herramienta para medir el rendimiento w
 - **setupTests.js:** El código importa el paquete **"@testing-library/jest-dom",** que es una biblioteca de utilidades para realizar pruebas de unidades de interfaz de usuario en React. Esta biblioteca proporciona funciones de aserción adicionales que se pueden usar en pruebas Jest, para verificar si los elementos de la interfaz de usuario se comportan como se espera. Por ejemplo, esta biblioteca agrega la función **toHaveTextContent()** para verificar si un elemento tiene un determinado contenido de texto. Al importar el paquete en un archivo de prueba, se pueden utilizar estas funciones adicionales de aserción.
 ---
 
+### **nginx**
