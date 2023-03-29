@@ -95,11 +95,9 @@ En resumen, este código es parte de una herramienta para medir el rendimiento w
 
 ### **nginx**
 - **default.conf:** El código proporcionado es una configuración de servidor Nginx que se utiliza comúnmente para servir aplicaciones web en producción.
-
 La sección **upstream** define dos servidores backend llamados **client** y **api** que escuchan en los puertos 3000 y 5000, respectivamente. Luego, se define un servidor principal que escucha en el puerto 80.
 
 La sección **location** se utiliza para enrutar las solicitudes HTTP entrantes. La primera ubicación **/** redirige todas las solicitudes a la aplicación web en el servidor backend **client.** La ubicación **/ws** se utiliza para enrutar todas las solicitudes WebSocket a la misma aplicación web en el servidor backend **client.**
-
 La ubicación **/api** se utiliza para enrutar todas las solicitudes API a la aplicación backend en el servidor **api.** La línea **rewrite /api/(.*) /$1 break;** elimina la cadena "/api" del URI de la solicitud entrante antes de enrutar la solicitud al servidor backend **api.**
 
 En resumen, este archivo de configuración de Nginx se utiliza para enrutar las solicitudes HTTP y WebSocket entrantes a las aplicaciones web y API backend en servidores separados.
@@ -109,6 +107,31 @@ En resumen, este archivo de configuración de Nginx se utiliza para enrutar las 
 
 La primera línea especifica la imagen base que se utilizará para construir la nueva imagen. En este caso, la imagen de Docker que contiene NGINX se utilizará como la imagen base.
 La segunda línea copia el archivo de configuración "default.conf" del directorio actual al directorio "/etc/nginx/conf.d/" en la imagen de Docker.
+---
+  
+### **server**
+- **Dockerfile.dev:** Este es un archivo Dockerfile que describe cómo construir una imagen de Docker para una aplicación Node.js.
 
+El código comienza con la instrucción **FROM,** que indica que la imagen de Docker se basará en la imagen **node:16-alpine.**
+Luego se establece el directorio de trabajo para la aplicación en **/app** utilizando la instrucción **WORKDIR.**
+A continuación, se copia el archivo **package.json** en el directorio de trabajo utilizando la instrucción **COPY.**
+Se ejecuta el comando **npm install** para instalar las dependencias de la aplicación.
 
+Finalmente, se copia todo el contenido del directorio actual (el código fuente de la aplicación) en el directorio de trabajo utilizando la instrucción **COPY.** La instrucción **CMD** se utiliza para especificar el comando que se ejecutará cuando se inicie un contenedor basado en esta imagen, que en este caso es **npm run dev,** que se utiliza para iniciar el servidor de desarrollo de Node.js.
+  
+  
+- **index.js:** Este código es una aplicación Node.js que configura un servidor Express con varios endpoints para manejar una aplicación que toma un número entero como entrada, lo almacena en una base de datos PostgreSQL y también lo almacena en Redis a través de un mensaje insert. La aplicación tiene los siguientes componentes:
 
+    - *Configuración de la aplicación:* Se importan los módulos **keys,** **express,** **body-parser,** **cors,** **pg,** y **redis.** Se crea una instancia de la aplicación Express y se configuran middlewares para permitir el manejo de solicitudes CORS y el análisis de JSON.
+    - *Configuración de la base de datos:* Se crea una instancia de **pgClient** para conectarse a una base de datos PostgreSQL y se usa para crear una tabla llamada **values** en la base de datos.
+    - *Configuración de Redis:* Se crea una instancia de **redisClient** y otra de **redisPublisher** para conectarse a un servidor Redis. El cliente se duplica para asegurarse de que siempre haya una conexión disponible.
+    - *Manejadores de ruta:* Se definen varias rutas HTTP:
+        1. **GET /:** Devuelve una respuesta de "Hola".
+        2. **GET /values/all:** Obtiene los valores almacenados en la base de datos PostgreSQL y los devuelve como una respuesta JSON.
+        3. **GET /values/current:** Obtiene los valores almacenados en Redis y los devuelve como una respuesta JSON.
+        4. **POST /values:** Inserta un nuevo valor en la base de datos y en Redis. Si el índice enviado en la solicitud es mayor que 40, se devuelve una respuesta de error con un estado HTTP 422.
+
+Finalmente, la aplicación escucha en el puerto 5000 y registra un mensaje en la consola para indicar que está escuchando.
+  
+
+  
