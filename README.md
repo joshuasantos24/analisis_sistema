@@ -104,7 +104,6 @@ En resumen, este archivo de configuración de Nginx se utiliza para enrutar las 
 
 
 - **Dockerfile.dev:** El siguiente código es un archivo Dockerfile que especifica una imagen de Docker que utiliza el servidor web NGINX y configura el archivo de configuración predeterminado de NGINX con el archivo "default.conf" en el directorio actual.
-
 La primera línea especifica la imagen base que se utilizará para construir la nueva imagen. En este caso, la imagen de Docker que contiene NGINX se utilizará como la imagen base.
 La segunda línea copia el archivo de configuración "default.conf" del directorio actual al directorio "/etc/nginx/conf.d/" en la imagen de Docker.
 ---
