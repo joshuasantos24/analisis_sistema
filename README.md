@@ -1,5 +1,19 @@
 # Proyecto final de analisis y sistemas
 
+### **docker-compose.yml**
+Este es un archivo docker-compose.yml utilizado para definir y ejecutar múltiples contenedores en Docker.
+
+En este archivo, se definen cinco servicios: **postgres,** **redis,** **nginx,** **api,** **client** y **worker.**  
+- El servicio postgres utiliza la imagen oficial de Postgres y establece la contraseña de la base de datos.
+- El servicio redis utiliza la imagen oficial de Redis.
+- El servicio nginx es el servidor web y se basa en la imagen que se construye a partir de un Dockerfile.dev en la carpeta de nginx. Depende de los servicios api y client, y está expuesto en el puerto 3050.
+- El servicio api es la API del servidor y se basa en la imagen que se construye a partir de un Dockerfile.dev en la carpeta de server. Se definen algunas variables de entorno, incluidas las credenciales de acceso a la base de datos y la dirección y el puerto del servidor Redis.
+- El servicio client es la aplicación cliente y se basa en la imagen que se construye a partir de un Dockerfile.dev en la carpeta de client. También utiliza un volumen para montar el directorio de la aplicación cliente en el contenedor.
+- El servicio worker es el trabajador y se basa en la imagen que se construye a partir de un Dockerfile.dev en la carpeta de worker. También utiliza un volumen para montar el directorio del trabajador en el contenedor y se definen las credenciales de Redis.
+
+Cada uno de estos servicios puede ser construido y ejecutado mediante el comando **docker-compose up.** 
+---
+
 ## **client**
 - **Dockerfile.dev:** Es un archivo Dockerfile que construye una imagen de contenedor de Docker utilizando la imagen base de **node:16-alpine.** Este archivo define el directorio de trabajo, copia el archivo **package.json** al directorio de trabajo, ejecuta el comando **npm install** para instalar las dependencias del proyecto, copia todo el contenido de la aplicación al directorio de trabajo y finalmente ejecuta el comando **"npm run start"** para iniciar la aplicación.
 
@@ -133,4 +147,40 @@ Finalmente, se copia todo el contenido del directorio actual (el código fuente 
 Finalmente, la aplicación escucha en el puerto 5000 y registra un mensaje en la consola para indicar que está escuchando.
   
 
+- **keys.js:** El código exporta un objeto con propiedades que corresponden a las variables de entorno de Redis y PostgreSQL. Estas variables son obtenidas a través del objeto **process.env** de Node.js, que proporciona acceso a las variables de entorno del sistema operativo. El objeto exportado puede ser importado y utilizado en otros archivos de Node.js para acceder a estas variables.
+
+
+- **package.json:** Este es un archivo **package.json** utilizado en un proyecto de Node.js para describir las dependencias y los scripts del proyecto.
+
+En este caso, las dependencias incluyen **express,** **pg,** **redis,** **cors,** **nodemon,** y **body-parser.** Estas son las bibliotecas que se utilizarán en el proyecto.
+Los scripts incluyen **dev** y **start.** El script **dev** inicia el servidor con **nodemon,** que es una herramienta de reinicio automático para el servidor Node.js. El script **start** inicia el servidor de Node.js sin **nodemon.**
+---  
+
+### **worker**
+- **Dockerfile.dev:** Este código es un archivo Dockerfile que se utiliza para construir una imagen de Docker.
+La imagen se basa en la imagen "node:alpine", lo que significa que está utilizando una versión ligera de la imagen base de Node.
+  
+    - El comando **"WORKDIR"** establece el directorio de trabajo para la aplicación en **"/app".**
+    - El comando **"COPY"** copia el archivo **"package.json"** al directorio de trabajo actual.
+    - El comando **"RUN"** ejecuta el comando **"npm install"** en el directorio actual, lo que instala todas las dependencias necesarias para la aplicación.
+    - El segundo comando **"COPY"** copia todo el contenido de la aplicación al directorio actual.
+    - Por último, el comando **"CMD"** inicia la aplicación con el comando **"npm run dev",** que se especifica en el archivo **"package.json".**
+  
+  
+- **index.js:** Este código es parte de una aplicación para calcular la serie Fibonacci. La función **fib(index)** calcula el número de Fibonacci para un índice dado.
+
+Luego, se utiliza Redis como base de datos en memoria para almacenar los índices y sus respectivos números de Fibonacci. El cliente de Redis se crea utilizando las credenciales de conexión definidas en el archivo **keys.js.**
+El objeto **sub** se utiliza para suscribirse al canal "insert" en Redis, lo que significa que escuchará los mensajes que se publiquen en ese canal. Cuando se recibe un mensaje en el canal "insert", se calcula el número de Fibonacci correspondiente y se guarda en la base de datos Redis utilizando el índice como clave y el número de Fibonacci como valor.
+
+En resumen, este código escucha los mensajes publicados en el canal "insert" de Redis y calcula el número de Fibonacci correspondiente para el índice recibido, que se almacena en Redis.
+  
+
+- **keys.js:** Este módulo de Node.js exporta un objeto que contiene dos propiedades: **redisHost** y **redisPort.** El valor de cada propiedad se asigna utilizando el objeto **process.env,** que permite acceder a las variables de entorno del sistema operativo. En este caso, el código espera que existan dos variables de entorno llamadas **REDIS_HOST** y **REDIS_PORT,** y asigna sus valores a las propiedades correspondientes del objeto que se exporta. Esto significa que cuando se utiliza el módulo **keys** en otro archivo de Node.js, se puede acceder a las propiedades **redisHost** y **redisPort** y utilizar sus valores para conectarse a un servidor de Redis.
+
+
+- **package.json:** El código se trata de un archivo package.json, el cual se utiliza para definir las dependencias y scripts necesarios para un proyecto Node.js.
+
+Las dependencias definidas son **nodemon** y **redis.** **nodemon** es una herramienta que se utiliza para monitorear cambios en los archivos del proyecto y reiniciar automáticamente el servidor. **redis** es una base de datos en memoria que se utiliza para almacenar información de forma rápida y eficiente.
+Los scripts definidos son **start** y **dev.** El script **start** se utiliza para iniciar el servidor Node.js mediante el comando **node index.js.** El script **dev** se utiliza durante el desarrollo para iniciar el servidor con **nodemon,** lo que permite que el servidor se reinicie automáticamente cada vez que se realizan cambios en el código.
+---
   
