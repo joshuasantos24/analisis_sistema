@@ -50,7 +50,6 @@ Cada uno de estos servicios puede ser construido y ejecutado mediante el comando
 Por ejemplo, la clase **".App"** establece el texto centrado en la página. ".App-logo" establece el tamaño y otros atributos de una imagen de logo en la aplicación. La regla **"@media (prefers-reduced-motion: no-preference)"** establece una animación de rotación para el logo si el usuario no tiene preferencia de reducción de movimiento. La clase **".App-header"** establece el fondo, altura mínima, alineación y tamaño de fuente del encabezado de la aplicación.
 
 La última regla **"@keyframes App-logo-spin"** establece los fotogramas clave para la animación del logo. En este caso, el logo girará 360 grados en 20 segundos.
-  
 
 - **App.js:** Este código es un ejemplo de una aplicación web de React que utiliza el enrutamiento con React Router.
 El componente App define el esqueleto de la aplicación, que consiste en un encabezado que contiene un logotipo, un enlace *"Learn React"* y dos enlaces de navegación, *"Home"* y *"Other Page".*
