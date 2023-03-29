@@ -154,6 +154,7 @@ Finalmente, la aplicación escucha en el puerto 5000 y registra un mensaje en la
 
 En este caso, las dependencias incluyen **express,** **pg,** **redis,** **cors,** **nodemon,** y **body-parser.** Estas son las bibliotecas que se utilizarán en el proyecto.
 Los scripts incluyen **dev** y **start.** El script **dev** inicia el servidor con **nodemon,** que es una herramienta de reinicio automático para el servidor Node.js. El script **start** inicia el servidor de Node.js sin **nodemon.**
+
 ---  
 
 ### **worker**
@@ -182,5 +183,6 @@ En resumen, este código escucha los mensajes publicados en el canal "insert" de
 
 Las dependencias definidas son **nodemon** y **redis.** **nodemon** es una herramienta que se utiliza para monitorear cambios en los archivos del proyecto y reiniciar automáticamente el servidor. **redis** es una base de datos en memoria que se utiliza para almacenar información de forma rápida y eficiente.
 Los scripts definidos son **start** y **dev.** El script **start** se utiliza para iniciar el servidor Node.js mediante el comando **node index.js.** El script **dev** se utiliza durante el desarrollo para iniciar el servidor con **nodemon,** lo que permite que el servidor se reinicie automáticamente cada vez que se realizan cambios en el código.
+
 ---
   
