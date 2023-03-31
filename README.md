@@ -1,5 +1,13 @@
 # Proyecto final de analisis y sistemas
 
+# Joshua Santos (2022-0151)
+# Stiven Martinez (2022-0275)
+
+En este proyecto en equipo nos centraremos en el desglose de todos los componentes de una aplicacion. La app esta diseñada utilizando React y su funcionamiento es retornar la secuencia de Fibonacci a partir del valor que se le especifique.
+
+A continuacion esta un desglose de cada archivo, un breve resumen de que son y que funcion cumplen exactamente en la aplicacion.
+---
+
 ### **docker-compose.yml**
 Este es un archivo docker-compose.yml utilizado para definir y ejecutar múltiples contenedores en Docker.
 
@@ -186,3 +194,4 @@ Los scripts definidos son **start** y **dev.** El script **start** se utiliza pa
 
 ---
   
+En conclusión, el desglose de una app es una tarea compleja pero necesaria para cualquier proyecto de desarrollo de software. En este proyecto hemos analizado todos los componentes de la app, asi como tambien hemos identificado las funcionalidades principales y secundarias, que servicios utiliza; las imagenes Docker; sus puertos y servidores; asi como el back-end y el front-end.
