@@ -6,6 +6,7 @@
 En este proyecto en equipo nos centraremos en el desglose de todos los componentes de una aplicacion. La app esta diseñada utilizando React y su funcionamiento es retornar la secuencia de Fibonacci a partir del valor que se le especifique.
 
 A continuacion esta un desglose de cada archivo, un breve resumen de que son y que funcion cumplen exactamente en la aplicacion.
+
 ---
 
 ### **docker-compose.yml**
